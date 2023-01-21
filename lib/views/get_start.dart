@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:practices_homework/views/home_page.dart';
 import 'package:practices_homework/views/homepage.dart';
 import 'package:practices_homework/views/login.dart';
+import 'package:practices_homework/views/payment_method.dart';
 
 // class GetStartedPageArguments {
 //   final String title;
@@ -77,7 +78,7 @@ class GetStartedPage extends StatelessWidget {
                           // );
                           Navigator.pushNamed(
                             context,
-                            HomePage.routeName,
+                            PaymentMethod.routeName,
                           );
                           },
                         child: const Text("Get Start"),
