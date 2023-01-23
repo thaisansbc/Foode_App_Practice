@@ -10,6 +10,9 @@ import 'package:practices_homework/views/popular_restaurant_page.dart';
 import 'package:practices_homework/views/home_page.dart';
 import 'package:practices_homework/views/payment_method.dart';
 import 'package:practices_homework/views/upload_profile.dart';
+import 'package:practices_homework/views/view_profile_photo.dart';
+import 'package:practices_homework/views/set_location.dart';
+import 'package:practices_homework/views/set_pin_location.dart';
 
 Route<RouteSettings> onGenerateRoute(RouteSettings settings) {
   var args = settings.arguments;
@@ -65,6 +68,18 @@ Route<RouteSettings> onGenerateRoute(RouteSettings settings) {
     case UploadProfile.routeName:
       return MaterialPageRoute(
         builder: (context) => const UploadProfile(),
+      );
+    case ViewProfilePhoto.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const ViewProfilePhoto(),
+      );
+    case SetLocation.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const SetLocation(),
+      );
+    case SetPinLocation.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const SetPinLocation(),
       );
     default:
       return MaterialPageRoute(

@@ -428,7 +428,6 @@ class InitState extends State<RegisterForm> {
                   ),
                 ),
               ),
-
             ),
             Container(
               padding: const EdgeInsets.only(left: 40, right: 20),
@@ -585,21 +584,26 @@ class InitState extends State<RegisterForm> {
             ),
 
             Container(
-              padding: const EdgeInsets.only(left: 20, right: 20),
+              padding: const EdgeInsets.only(left: 20, top: 10, right: 20),
               width: MediaQuery.of(context).size.width,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(
+                    context,
+                    PaymentMethod.routeName,
+                  );
+                },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xffFFBD2F),
+                  backgroundColor: const Color(0xFFF43F5E),
                   padding: const EdgeInsets.fromLTRB(0, 15, 0, 15),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5), // <-- Radius
+                    borderRadius: BorderRadius.circular(100), // <-- Radius
                   ),
                 ),
                 child: const Text(
                   'Register',
                   style: TextStyle(
-                    color: Colors.black,
+                    color: Colors.white,
                     fontSize: 16,
                     fontFamily: 'Product_Sans',
                     fontWeight: FontWeight.w600,

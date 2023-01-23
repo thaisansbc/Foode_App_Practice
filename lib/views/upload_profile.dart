@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:practices_homework/views/login.dart';
+import 'package:practices_homework/views/view_profile_photo.dart';
 
 class UploadProfile extends StatefulWidget {
   const UploadProfile({super.key});
@@ -57,7 +58,7 @@ class InitState extends State<UploadProfile> {
                   Column(
                     children: const [
                       Text(
-                        'Fill in your bio',
+                        'Upload your photo',
                         textAlign: TextAlign.left,
                         style: TextStyle(
                           color: Color(0xFF09101D),
@@ -86,41 +87,135 @@ class InitState extends State<UploadProfile> {
                 ),
               ),
             ),
+            const SizedBox(height: 10),
             Container(
-              // padding: const EdgeInsets.only(top: 50),
-              margin: const EdgeInsets.only(top: 10),
-              height: 150,
-              width: MediaQuery.of(context).size.width,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/paypal.png'),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(top: 10),
-              height: 120,
-              width: MediaQuery.of(context).size.width,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/visa.png'),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(top: 10),
-              height: 120,
-              width: MediaQuery.of(context).size.width,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/paypal.png'),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
+              padding:
+              const EdgeInsets.only(left: 10, right: 20, top: 20, bottom: 20),
+              //height: 100,
 
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.blue.withOpacity(0.05),
+                    spreadRadius: 1,
+                    blurRadius: 10,
+                    offset: const Offset(0, 3),
+                  ),
+                ],
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children:  [
+                  Container(
+                    padding:
+                    const EdgeInsets.all(15),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFF43F5E).withOpacity(0.1),
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                    child: IconButton(
+                      icon: const Icon(Icons.camera_alt_sharp,
+                          color: Color(0xFFFF1843)),
+                      iconSize: 40,
+                      onPressed: () {
+                        print("Take photo");
+                      },
+                    ),
+                  ),
+
+                  const SizedBox(height: 10),
+                  const Text(
+                    "Take photo",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 10),
+            Container(
+              padding:
+              const EdgeInsets.only(left: 10, right: 20, top: 20, bottom: 20),
+              //height: 100,
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.blue.withOpacity(0.05),
+                    spreadRadius: 1,
+                    blurRadius: 10,
+                    offset: const Offset(0, 3),
+                  ),
+                ],
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children:  [
+                  Container(
+                    padding:
+                    const EdgeInsets.all(15),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFF43F5E).withOpacity(0.1),
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                    child: IconButton(
+                      icon: const Icon(Icons.folder,
+                          color: Color(0xFFFF1843)),
+                      iconSize: 40,
+                      onPressed: () {
+                        print("From gallery");
+                      },
+                    ),
+                  ),
+
+                  const SizedBox(height: 10),
+                  const Text(
+                    "From gallery",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.only(left: 20, top: 100, right: 20),
+              width: MediaQuery.of(context).size.width,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(
+                    context,
+                    ViewProfilePhoto.routeName,
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFFF43F5E),
+                  padding: const EdgeInsets.fromLTRB(0, 15, 0, 15),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(100), // <-- Radius
+                  ),
+                ),
+                child: const Text(
+                  'Next',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontFamily: 'Product_Sans',
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
