@@ -1,15 +1,16 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-// import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:practices_homework/views/login.dart';
+import 'package:practices_homework/views/set_location.dart';
 
-
-class SetPinLocation extends StatefulWidget {
-  const SetPinLocation({super.key});
-  static const String routeName = '/SetPinLocation';
+class DeliveryCalling extends StatefulWidget {
+  const DeliveryCalling({super.key});
+  static const String routeName = '/DeliveryCalling';
   @override
   State<StatefulWidget> createState() => InitState();
 }
 
-class InitState extends State<SetPinLocation> {
+class InitState extends State<DeliveryCalling> {
   @override
   Widget build(BuildContext context) {
     return initWidget();
@@ -57,7 +58,7 @@ class InitState extends State<SetPinLocation> {
                   Column(
                     children: const [
                       Text(
-                        'Set Your Location',
+                        'Upload your photo',
                         textAlign: TextAlign.left,
                         style: TextStyle(
                           color: Color(0xFF09101D),
@@ -71,7 +72,6 @@ class InitState extends State<SetPinLocation> {
                 ],
               ),
             ),
-          
             Container(
               padding: const EdgeInsets.only(left: 20, right: 20),
               margin: const EdgeInsets.only(top: 30),
@@ -89,8 +89,8 @@ class InitState extends State<SetPinLocation> {
             ),
             const SizedBox(height: 10),
             Container(
-              padding:
-              const EdgeInsets.only(left: 10, right: 20, top: 20, bottom: 20),
+              padding: const EdgeInsets.only(
+                  left: 10, right: 20, top: 20, bottom: 20),
               //height: 100,
 
               width: MediaQuery.of(context).size.width,
@@ -108,75 +108,46 @@ class InitState extends State<SetPinLocation> {
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children:  const [
-                  SizedBox(height: 10),
-                  Text(
-                    "Set location",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 15,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              padding:
-              const EdgeInsets.only(left: 10, right: 20, top: 20, bottom: 20),
-              //height: 100,
-
-              width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.blue.withOpacity(0.05),
-                    spreadRadius: 1,
-                    blurRadius: 10,
-                    offset: const Offset(0, 3),
-                  ),
-                ],
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children:  [
+                children: [
+                  // Positioned(
+                  //     child: Container(
+                  //   padding: const EdgeInsets.only(
+                  //       left: 10, right: 20, top: 20, bottom: 20),
+                  // )),
                   Container(
-                    padding:
-                    const EdgeInsets.all(15),
+                    padding: const EdgeInsets.all(15),
                     decoration: BoxDecoration(
                       color: const Color(0xFFF43F5E).withOpacity(0.1),
                       borderRadius: BorderRadius.circular(100),
                     ),
-                    child: IconButton(
-                      icon: const Icon(Icons.location_pin,
-                          color: Color(0xFFFF1843)),
-                      iconSize: 40,
-                      onPressed: () {
-                        print("Set location");
-                      },
+                    child: const Image(
+                      image: AssetImage('assets/images/profile_photo.png'),
+                      width: 180,
+                      height: 180,
                     ),
                   ),
-
-                  const SizedBox(height: 10),
-                  const Text(
-                    "Set location",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 15,
-                      fontWeight: FontWeight.w500,
-                    ),
+                  IconButton(
+                    padding: const EdgeInsets.only(
+                        left: 100,  bottom: 10),
+                    icon: const Icon(Icons.edit, color: Color(0xFFFF1843)),
+                    iconSize: 30,
+                    onPressed: () {
+                      print("Edit Photo");
+                    },
                   ),
                 ],
               ),
             ),
-
             Container(
-              padding: const EdgeInsets.only(left: 20, top: 400, right: 20),
+              padding: const EdgeInsets.only(left: 20, top: 250, right: 20),
               width: MediaQuery.of(context).size.width,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(
+                    context,
+                    SetLocation.routeName,
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFFF43F5E),
                   padding: const EdgeInsets.fromLTRB(0, 15, 0, 15),
@@ -195,12 +166,9 @@ class InitState extends State<SetPinLocation> {
                 ),
               ),
             ),
-
           ],
         ),
       ),
     );
   }
-
 }
-

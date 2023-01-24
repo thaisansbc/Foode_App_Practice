@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:practices_homework/components/constants.dart';
+import 'package:practices_homework/views/forgot_password.dart';
 import 'package:practices_homework/views/home_page.dart';
 import 'package:practices_homework/views/popular_menu_page.dart';
 import 'package:practices_homework/views/popular_restaurant_page.dart';
@@ -220,37 +221,38 @@ class InitState extends State<LoginForm> {
                 ),
               ),
             ),
-            // Container(
-            //     padding: const EdgeInsets.only(
-            //         left: 20, right: 20, top: 1, bottom: 1),
-            //     width: MediaQuery.of(context).size.width,
-            //     alignment: Alignment.center,
-            //     child: SizedBox(
-            //       width: 130,
-            //       child: ElevatedButton(
-            //           onPressed: () {
-            //             Navigator.pushNamed(
-            //               context,
-            //               PopularRestaurantListPage.routeName,
-            //             );
-            //           },
-            //           style: ElevatedButton.styleFrom(
-            //             elevation: 0.0,
-            //             backgroundColor: Colors.red.withOpacity(0),
-            //             padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-            //           ),
-            //           child: const Align(
-            //             child: Text(
-            //               'Forgot Password?',
-            //               style: TextStyle(
-            //                 color: Colors.red,
-            //                 fontSize: 16,
-            //                 fontWeight: FontWeight.w600,
-            //                 fontFamily: 'Product_Sans',
-            //               ),
-            //             ),
-            //           )),
-            //     )),
+
+            Container(
+                padding: const EdgeInsets.only(
+                    left: 20, right: 20, top: 10, bottom: 1),
+                width: MediaQuery.of(context).size.width,
+                alignment: Alignment.center,
+                child: SizedBox(
+                  width: 400,
+                  child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushNamed(
+                          context,
+                          ForgotPassword.routeName,
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        elevation: 0.0,
+                        backgroundColor: Colors.red.withOpacity(0),
+                        padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                      ),
+                      child: const Align(
+                        child: Text(
+                          'Forgot the password?',
+                          style: TextStyle(
+                            color: Color(0xFFF43F5E),
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16,
+                            fontFamily: 'Product_Sans',
+                          ),
+                        ),
+                      )),
+                )),
             Container(
                 padding: const EdgeInsets.only(
                     left: 20, right: 20, top: 10, bottom: 1),
@@ -297,17 +299,14 @@ class InitState extends State<LoginForm> {
                       onPressed: () {
                         Navigator.pushNamed(
                           context,
-                           RegisterForm.routeName,
+                          RegisterForm.routeName,
                         );
                       },
                       style: ElevatedButton.styleFrom(
                         elevation: 0.0,
                         backgroundColor: Colors.red.withOpacity(0.1),
                         padding: const EdgeInsets.fromLTRB(0, 12, 0, 12),
-                        // side: const BorderSide(
-                        //   width: 1.5,
-                        //   color: Colors.black,
-                        // ),
+
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12), // <-- Radius
                         ),
